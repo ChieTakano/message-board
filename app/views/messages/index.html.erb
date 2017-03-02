@@ -13,10 +13,13 @@
 </div>
 
 <%= form_for(@message) do |f| %>
-  名前:
-  <%= f.text_field :name %>
+<form class="new_message" id="new_message" action="/messages" accept-charset="UTF-8" method="post">
 
-  内容:
-  <%= f.text_field :body %>
-  <%= f.submit class: "btn btn-sm btn-primary" %>
+  名前:
+  <input type="text" name="message[name]" id="message_name" />
+
+  <textarea class="form-control" rows="3" type="text" name="message[body]" id="message_body" placeholder="内容をお書きください" ></textarea>
+
+  <input type="submit" name="commit" value="Create Message" />
+  
 <% end %>
